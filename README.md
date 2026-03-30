@@ -4,7 +4,7 @@ Este repositório contém a entrega da atividade de uma aplicação Flask, aplic
 
 ## 👥 Equipe (Autores)
 1. Mateus Lora - 1136218
-2. [Nome do Colega 2] - [RA do Colega 2]
+2. Ricardo Rigo Antunes - 1136661
 3. [Nome do Colega 3] - [RA do Colega 3]
 
 ## 🏗️ Arquitetura e Domínio do Código
