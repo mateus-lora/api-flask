@@ -9,7 +9,7 @@ Este repositório contém a entrega da atividade de uma aplicação Flask, aplic
 
 ## 🏗️ Arquitetura e Domínio do Código
 Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
-* **`app.py` (Controlador):** Lida com as rotas HTTP (REST) e JSON.
+* **`app.py` (Controlador):** Lida com as rotas HTTP (REST) e JSON, além de persistir os dados usando SQLAlchemy.
 * **`services.py` (Regra de Negócio):** Valida os dados e formata a saída.
 * **`database.py` (Camada de Dados):** Isola o banco de dados (SQLite) usando o padrão Repository.
 * **`auth.py` (Autenticação):** Implementa um Decorator para proteger as rotas com API Key.
@@ -25,3 +25,16 @@ Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
 No seu cliente REST (como Postman ou Insomnia), envie a requisição com o seguinte cabeçalho (header):
 * Chave: `x-api-key`
 * Valor: `A senha que você definiu no arquivo .env`
+
+## Demonstração do projeto funcionando:
+* Login:
+![Imagem](./src/login.png)
+
+* Colocar Tarefa:
+![Imagem](./src/listalimpa.png)
+
+* Tarefa Salva:
+![Imagem](./src/telaatividades.png)
+
+* Tarefa Existente: 
+![Imagem](./src/jaexiste.png)
