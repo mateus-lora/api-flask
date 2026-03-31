@@ -5,7 +5,7 @@ Este repositório contém a entrega da atividade de uma aplicação Flask, aplic
 ## 👥 Equipe (Autores)
 1. Mateus Lora - 1136218
 2. Ricardo Rigo Antunes - 1136661
-3. [Nome do Colega 3] - [RA do Colega 3]
+3. Gabriel Hanel - 1135926
 
 ## 🏗️ Arquitetura e Domínio do Código
 Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
@@ -31,7 +31,7 @@ No seu cliente REST (como Postman ou Insomnia), envie a requisição com o segui
 ![Imagem](./src/login.png)
 
 * Colocar Tarefa:
-![Imagem](./src/listalimpa.png)
+![Imagem](./src/listaLimpa.png)
 
 * Tarefa Salva:
 ![Imagem](./src/telaatividades.png)
