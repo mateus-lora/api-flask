@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Flask</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #4facfe;
+      box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      width: 100%;
+      background: #4facfe;
+      color: white;
+      margin-top: 10px;
+    }
+
+    .btn-primary:hover {
+      background: #3a8de0;
+    }
+
+    .btn-update {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .btn-update:hover {
+      background: #3e8e41;
+    }
+
+    .btn-delete {
+      background: #f44336;
+      color: white;
+    }
+
+    .btn-delete:hover {
+      background: #d32f2f;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .task-form {
+      display: flex;
+      gap: 5px;
+      flex-grow: 1;
+    }
+
+    .empty {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+      margin-top: 10px;
+    }
+
+    .alert {
+      background: #ff9800;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>📝 Tarefas</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for msg in messages %}
+          <div class="alert">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="/create" method="post">
+      <input type="text" name="description" placeholder="Nova tarefa..." required>
+      <button type="submit" class="btn-primary">Adicionar</button>
+    </form>
+
+    <ul>
+      {% for task in tasks %}
+      <li>
+
+        <form action="/update/{{task.id}}" method="post" class="task-form">
+          <input type="text" name="description" value="{{ task.description }}" required>
+          <button type="submit" class="btn-update">✔</button>
+        </form>
+
+        <form action="/delete/{{ task.id }}" method="post">
+          <button type="submit" class="btn-delete">✖</button>
+        </form>
+
+      </li>
+      {% else %}
+      <li class="empty">Sua lista está limpa!</li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</body>
+</html>

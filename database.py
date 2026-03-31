@@ -27,4 +27,4 @@ class DataRepository:
         with self._get_connection() as conn:
             cursor = conn.cursor()
             cursor.execute('SELECT id, value FROM data')
-            return cursor.fetchall()
+            return cursor.fetchall() 

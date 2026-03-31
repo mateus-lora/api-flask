@@ -4,12 +4,12 @@ Este repositório contém a entrega da atividade de uma aplicação Flask, aplic
 
 ## 👥 Equipe (Autores)
 1. Mateus Lora - 1136218
-2. [Nome do Colega 2] - [RA do Colega 2]
+2. Gabriel Hanel - 1135926
 3. [Nome do Colega 3] - [RA do Colega 3]
 
 ## 🏗️ Arquitetura e Domínio do Código
 Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
-* **`app.py` (Controlador):** Lida com as rotas HTTP (REST) e JSON.
+* **`app.py` (Controlador):** Lida com as rotas HTTP (REST) e JSON, além de persistir os dados usando SQLAlchemy.
 * **`services.py` (Regra de Negócio):** Valida os dados e formata a saída.
 * **`database.py` (Camada de Dados):** Isola o banco de dados (SQLite) usando o padrão Repository.
 * **`auth.py` (Autenticação):** Implementa um Decorator para proteger as rotas com API Key.
