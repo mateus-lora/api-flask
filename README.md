@@ -15,9 +15,12 @@ Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
 * **`auth.py` (Autenticação):** Implementa um Decorator para proteger as rotas com API Key.
 
 ## 🔒 Como testar (Funcionalidade)
-No seu cliente REST (como Postman ou Insomnia), envie a requisição com o seguinte cabeçalho (header):
-* Chave: `x-api-key`
-* Valor: `A senha que você definiu no arquivo .env`
+### Instalações necessárias:
+`pip install flask`
+
+`pip install sqlalchemy`
+
+`pip install flask-sqlalchemy`
 
 ## Demonstração do projeto funcionando:
 * Login:
