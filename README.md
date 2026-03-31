@@ -14,13 +14,6 @@ Para melhorar a manutenibilidade, o código foi dividido em 4 responsabilidades:
 * **`database.py` (Camada de Dados):** Isola o banco de dados (SQLite) usando o padrão Repository.
 * **`auth.py` (Autenticação):** Implementa um Decorator para proteger as rotas com API Key.
 
-## 🚀 Como executar
-1. Instale as dependências: `pip install -r requirements.txt`
-2. Na mesma pasta do projeto, crie um arquivo chamado `.env`
-3. Dentro desse arquivo `.env`, escreva a seguinte linha com uma senha da sua escolha:
-   `API_KEY=sua-senha-aqui`
-4. Execute a aplicação: `python app.py`
-
 ## 🔒 Como testar (Funcionalidade)
 No seu cliente REST (como Postman ou Insomnia), envie a requisição com o seguinte cabeçalho (header):
 * Chave: `x-api-key`
